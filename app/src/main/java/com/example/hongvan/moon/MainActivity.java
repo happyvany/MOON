@@ -28,9 +28,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        t= (TextView) findViewById(R.id.Title) ;
+       /* t= (TextView) findViewById(R.id.Title) ;
         Typeface myCustomFont=Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Bold.ttf");
         t.setTypeface(myCustomFont);
+        */
 
 
         Spinner spinner =findViewById(R.id.spinner1);

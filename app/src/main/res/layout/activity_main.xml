@@ -30,6 +30,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="25dp"
+        android:contentDescription="moonibeschreibung"
         android:src="@drawable/logo" />
 
     <Button
