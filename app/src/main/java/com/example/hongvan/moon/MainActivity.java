@@ -20,8 +20,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button nxtbutton;
-
-
     TextView t;
 
 

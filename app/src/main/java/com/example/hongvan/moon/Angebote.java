@@ -1,14 +1,13 @@
 package com.example.hongvan.moon;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
-import com.example.hongvan.moon.R;
 
 import java.util.ArrayList;
 
@@ -17,7 +16,7 @@ public class Angebote extends AppCompatActivity {
 
     //vars
     private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrlas = new ArrayList<>();
+    private ArrayList<String> mImageUrls = new ArrayList<>();
     private Button prevButton;
 
     @Override
@@ -33,11 +32,31 @@ public class Angebote extends AppCompatActivity {
                 openStartBildschirm();
             }
         });
+
+        initImageBitmaps();
     }
 
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: preparing bitmaps");
+        mImageUrls.add("@mipmap/freizeit");
+        mNames.add("Freizeit");
 
+        mImageUrls.add("@mipmap/freizeit");
+        mNames.add("Einkaufen");
+
+        mImageUrls.add("https://upload.wikimedia.org/wikipedia/commons/e/e3/Logo_BILD.svg");
+        mNames.add("Medizin");
+
+        initRecyclerView();
+
+    }
+
+    private void initRecyclerView(){
+        Log.d(TAG, "initRecyclerView: init recyclerView.");
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mNames, mImageUrls);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     public void openStartBildschirm(){
