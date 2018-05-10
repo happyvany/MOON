@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         t= (TextView) findViewById(R.id.Title) ;
-        Typeface myCustomFont=Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Black.ttf");
+        Typeface myCustomFont=Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Bold.ttf");
         t.setTypeface(myCustomFont);
 
 
