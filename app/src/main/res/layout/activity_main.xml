@@ -8,24 +8,27 @@
 
     <TextView
         android:id="@+id/Title"
-        android:layout_width="210dp"
-        android:layout_height="32dp"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="98dp"
         android:text="MOONINATIM"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/MOONINATIMPINK"
-        android:textSize="24sp"
-        app:fontFamily="casual" />
+        android:textSize="30dp"
+        app:fontFamily="casual"
+
+
+        />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="172dp"
+        android:layout_marginBottom="139dp"
         android:text="Darmstadt" />
 
 
@@ -35,7 +38,7 @@
         android:layout_height="62dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="56dp"
         android:text="STADT"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="24sp"
