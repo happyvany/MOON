@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MOON</string>
+
+
+
+
+    <string-array name="Stadt">
+        <item>Darmstadt</item>
+        <item>Leipzig</item>
+        <item>Frankfurt</item>
+    </string-array>
+
+
+
+
+
 </resources>
