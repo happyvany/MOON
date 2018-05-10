@@ -10,12 +10,18 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="201dp"
         android:text="ANGEBOTE"
-        android:textSize="18sp"
+        android:textSize="30sp"
         app:fontFamily="monospace" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view">
+
+    </android.support.v7.widget.RecyclerView>
 
     <Button
         android:id="@+id/prvbtn"
@@ -26,4 +32,5 @@
         android:layout_marginBottom="14dp"
         android:layout_marginStart="12dp"
         android:text="Zurück" />
+
 </RelativeLayout>
