@@ -15,6 +15,7 @@
         android:layout_marginTop="98dp"
         android:text="MOONINATIM"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/MOONINATIMPINK"
         android:textSize="24sp"
         app:fontFamily="casual" />
 
