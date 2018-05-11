@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,8 +20,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private Button nxtbutton;
+    private ImageView nxtbutton;
+
+
     TextView t;
+    String spinnerValue;
+
 
 
 
@@ -42,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
 
 
-        nxtbutton = findViewById(R.id.button);
+        nxtbutton = findViewById(R.id.go_button);
         nxtbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
