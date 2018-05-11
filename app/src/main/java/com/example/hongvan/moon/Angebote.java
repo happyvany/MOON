@@ -38,10 +38,10 @@ public class Angebote extends AppCompatActivity {
 
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: preparing bitmaps");
-        mImageUrls.add("@mipmap/freizeit");
+        mImageUrls.add("https://photos-5.dropbox.com/t/2/AADlqhzWXoeRhwjGrvhKQBm2nq48-Jh9U5DBrf_wBbJAUw/12/17675179/jpeg/32x32/1/_/1/2/freizeit.bmp/EJvOlg0YtZ4WIAIoAg/KNuyV_PpM0v4Rf_4c6KLhRUxAP2N-HNq-ldj5zarGOI?size=2048x1536&size_mode=3");
         mNames.add("Freizeit");
 
-        mImageUrls.add("@mipmap/freizeit");
+        mImageUrls.add("https://photos-6.dropbox.com/t/2/AAD_gPRsLDPrOcCJ0LAlWZwFECvHIYqfdG1YbwUGoydMBA/12/17675179/jpeg/32x32/1/_/1/2/einkaufen.bmp/EJvOlg0YtZ4WIAIoAg/L0VImr98dCeAnMD7T18L962cpK3OS4fe3iTcqpP0T6c?size=2048x1536&size_mode=3");
         mNames.add("Einkaufen");
 
         mImageUrls.add("https://upload.wikimedia.org/wikipedia/commons/e/e3/Logo_BILD.svg");

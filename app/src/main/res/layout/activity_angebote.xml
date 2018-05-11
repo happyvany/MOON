@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:textColor="#F000"
         android:text="ANGEBOTE"
-        android:textSize="30sp"
-        app:fontFamily="monospace" />
+        android:textSize="36sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
