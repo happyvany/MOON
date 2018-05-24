@@ -46,6 +46,9 @@ public class AngeboteFragment extends Fragment {
                 startActivity(new Intent(getActivity(), Einkauf.class)) ;
             }
         });*/
+        View rootView = inflater.inflate(R.layout.fragment_angebote2,
+                container, false);
+        //img_einkauf =
 
 
         return inflater.inflate(R.layout.fragment_angebote2, container, false);

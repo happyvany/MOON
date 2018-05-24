@@ -44,10 +44,22 @@ Button meinbutton;
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Stadt, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                              @Override
+                                              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                                  String item = parent.getItemAtPosition(position).toString();
+                                                  spinnerValue = item;
+
+                                              }
+
+                                              @Override
+                                              public void onNothingSelected(AdapterView<?> parent) {
+
+                                              }
+                                          });
 
 
-        spinnerValue = spinner.getSelectedItem().toString();
+        //spinnerValue =Spinner spinner.getSelectedItem().toString();
         System.out.println(spinnerValue);
 
          meinbutton=(Button)findViewById(R.id.listbutton);
