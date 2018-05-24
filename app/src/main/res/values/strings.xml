@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">MOON</string>
-
-
+    <string name="nav_kategorie" />
+    <string name="navkategorie">Kategorie</string>
+    <string name="navFavoriten">Favoriten</string>
+    <string name="navEinstellungen">Einstellungen</string>
 
 
     <string-array name="Stadt">
@@ -10,8 +12,8 @@
         <item>Frankfurt</item>
     </string-array>
 
-
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

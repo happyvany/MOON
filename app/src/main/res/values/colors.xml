@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ff4081</color>
     <color name="MOONINATIMPINK">#d24a63</color>
+    <color name="CityHunterTheme">#C9715F</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhiteTransparent">#80ffffff</color>
+    <color name="colorTheme">#915449</color>
 </resources>

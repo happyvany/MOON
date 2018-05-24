@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/icon_kategorie"
+        android:title="@string/navkategorie" />
+    <item
+        android:icon="@drawable/icon_favo"
+        android:title="@string/navFavoriten" />
+    <item
+        android:icon="@drawable/icon_settings"
+        android:title="@string/navEinstellungen" />
+</menu>
