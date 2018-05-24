@@ -26,7 +26,7 @@ public class Angebote extends AppCompatActivity {
     private FavoritenFragment favoritenFragment;
     private EinstellungenFragment einstellungenFragment;
 
-//TextView messageTextView;
+
 
 
 
@@ -54,15 +54,44 @@ public class Angebote extends AppCompatActivity {
                 openStartBildschirm();
             }
         });
+  /*
+        public void click()
+        {
+            img_einkauf = (ImageView)findViewById(R.id.einkaufen);
+            img_einkauf.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    Intent intent = new Intent("fgedfydfcgu.imagesethh.Main2Activity");
+                    startActivity(intent);
+                }
+            });
+        }
+        click();
 
+        img_freizeit = findViewById(R.id.freizeit);
+        img_freizeit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFreizeit();
+            }
+        });
+
+        img_medizin = findViewById(R.id.medizin);
+        img_medizin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMedizin();
+            }
+        });
+        */
 
 
 
         //PARAMETERANNAHME
 
-        //String message = getIntent().getStringExtra("key");
-        //messageTextView=(TextView)findViewById(R.id.bsptext);
-        //messageTextView.setText(message);
+        String message = getIntent().getStringExtra("key");
+        TextView messageT =(TextView)findViewById(R.id.testtest);
+
+        messageT.setText(message);
 
         //____________________________________
 
@@ -73,6 +102,15 @@ public class Angebote extends AppCompatActivity {
         angeboteFragment = new AngeboteFragment();
         favoritenFragment = new FavoritenFragment();
         einstellungenFragment = new EinstellungenFragment();
+        setFragment(angeboteFragment);
+
+       /* img_einkauf = (ImageView) findViewById(R.id.einkaufen);
+        img_einkauf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openStartBildschirm();
+            }
+        });*/
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //String stadtName;
 
     TextView t;
-  // String spinnerValue;
+   String spinnerValue;
 
 
     @Override
@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
 
 
-        //spinnerValue = spinner.getSelectedItem().toString();
+        spinnerValue = spinner.getSelectedItem().toString();
+        System.out.println(spinnerValue);
 
 
 
@@ -54,7 +55,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         nxtbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openAngebote();
+                //openAngebote();
+                Intent intent = new Intent(MainActivity.this, com.example.hongvan.moon.Angebote.class);
+
+                intent.putExtra("key",spinnerValue);
+                // intent.putExtra("key",spinnerValue);
+                startActivity(intent);
             }
         });
     }
@@ -62,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void openAngebote(){
         Intent intent = new Intent(this, com.example.hongvan.moon.Angebote.class);
 
-//intent.putExtra("KEY",spinnerValue);
+        intent.putExtra("KEY",spinnerValue);
        // intent.putExtra("key",spinnerValue);
         startActivity(intent);
 
