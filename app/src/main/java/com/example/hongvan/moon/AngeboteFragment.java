@@ -48,25 +48,49 @@ public class AngeboteFragment extends Fragment {
         });*/
         View rootView = inflater.inflate(R.layout.fragment_angebote2,
                 container, false);
-        //img_einkauf =
+        img_einkauf = rootView.findViewById(R.id.einkaufen);
+        img_einkauf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEinkaufen();
+            }
+        });
+
+        img_freizeit =  rootView.findViewById(R.id.freizeit);
+        img_freizeit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFreizeit();
+            }
+        });
 
 
-        return inflater.inflate(R.layout.fragment_angebote2, container, false);
+        img_medizin =  rootView.findViewById(R.id.medizin);
+        img_medizin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMedizin();
+            }
+        });
+
+        //return inflater.inflate(R.layout.fragment_angebote2, container, false);
+        return rootView;
     }
 
     public void openEinkaufen(){
         Intent intent = new Intent(getActivity(), Einkauf.class);
         startActivity(intent);
     }
-/*
+
     public void openFreizeit(){
-        Intent intent = new Intent(this, com.example.hongvan.moon.Freizeit.class);
+        Intent intent = new Intent(getActivity(), Freizeit.class);
         startActivity(intent);
     }
 
     public void openMedizin(){
-        Intent intent = new Intent(this, com.example.hongvan.moon.Medizin1.class);
+        Intent intent = new Intent(getActivity(), Medizin1.class);
+        startActivity(intent);
     }
-    */
+
 
 }
