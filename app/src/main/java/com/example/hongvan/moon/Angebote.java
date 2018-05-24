@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 public class Angebote extends AppCompatActivity {
     private static final String TAG = "Angebote";
@@ -25,7 +26,7 @@ public class Angebote extends AppCompatActivity {
     private FavoritenFragment favoritenFragment;
     private EinstellungenFragment einstellungenFragment;
 
-
+//TextView messageTextView;
 
 
 
@@ -35,6 +36,17 @@ public class Angebote extends AppCompatActivity {
         setContentView(R.layout.kategorie);
         Log.d(TAG, "onCreate:started");
 
+
+/*
+        Bundle extras = getIntent().getExtras();
+        if (extras!=null){
+            String value = extras.getString("KEY");
+            messageTextView.setText(value);
+        }
+
+*/
+
+
         prevButton = findViewById(R.id.prvbtn);
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +54,18 @@ public class Angebote extends AppCompatActivity {
                 openStartBildschirm();
             }
         });
+
+
+
+
+        //PARAMETERANNAHME
+
+        //String message = getIntent().getStringExtra("key");
+        //messageTextView=(TextView)findViewById(R.id.bsptext);
+        //messageTextView.setText(message);
+
+        //____________________________________
+
 
         mMainFrame = (FrameLayout) findViewById(R.id.main_frame);
         mMainNav = (BottomNavigationView) findViewById(R.id.bottomn_navigation);

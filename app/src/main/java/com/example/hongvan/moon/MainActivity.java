@@ -21,12 +21,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ImageView nxtbutton;
-
+//String stadtName;
 
     TextView t;
-    String spinnerValue;
-
-
+  // String spinnerValue;
 
 
     @Override
@@ -47,6 +45,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
 
 
+        //spinnerValue = spinner.getSelectedItem().toString();
+
+
+
+
         nxtbutton = findViewById(R.id.go_button);
         nxtbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +61,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void openAngebote(){
         Intent intent = new Intent(this, com.example.hongvan.moon.Angebote.class);
+
+//intent.putExtra("KEY",spinnerValue);
+       // intent.putExtra("key",spinnerValue);
         startActivity(intent);
+
     }
 
     @Override
@@ -71,4 +78,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
+
+
+
 }
