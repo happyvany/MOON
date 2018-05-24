@@ -3,12 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/nav_kat"
         android:icon="@drawable/icon_kategorie"
         android:title="@string/navkategorie" />
     <item
+        android:id="@+id/nav_fav"
         android:icon="@drawable/icon_favo"
         android:title="@string/navFavoriten" />
     <item
+        android:id="@+id/nav_einst"
         android:icon="@drawable/icon_settings"
         android:title="@string/navEinstellungen" />
 </menu>
