@@ -23,6 +23,7 @@ public class Fake extends AppCompatActivity {
 
         ListView myListView = (ListView) findViewById(R.id.shopping_list);
         myListView.setAdapter(meinAdapter);
+        //gdsaiuhij
 
 
 
