@@ -12,6 +12,20 @@
         android:layout_height="match_parent"
         android:text="Angebote" />
 
+    <ImageView
+        android:id="@+id/einkaufen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_shopping"
+        android:layout_margin="30dp"/>
+
+    <ImageView
+        android:id="@+id/freizeit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_bar"
+        android:layout_marginTop="180dp"
+        />
 
 
 </FrameLayout>
