@@ -21,6 +21,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ImageView nxtbutton;
+Button meinbutton;
+
 //String stadtName;
 
     TextView t;
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         //spinnerValue = spinner.getSelectedItem().toString();
 
+         meinbutton=(Button)findViewById(R.id.listbutton);
+        meinbutton.setOnClickListener(new View.OnClickListener(){
+            @Override
+                    public void onClick(View v){
+                openFake();
+            }
+        });
+
 
 
 
@@ -66,7 +76,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
        // intent.putExtra("key",spinnerValue);
         startActivity(intent);
 
+
+
     }
+
+    public void openFake(){
+        Intent intent = new Intent(this, com.example.hongvan.moon.Fake.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

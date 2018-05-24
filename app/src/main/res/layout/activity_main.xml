@@ -52,7 +52,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="186dp"
-        android:background="#000000"
+        android:background="#FFFFFF"
         android:text="STADT"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="24sp"
@@ -68,5 +68,14 @@
         android:layout_alignStart="@+id/go_button"
         android:layout_marginBottom="195dp"
         app:srcCompat="@drawable/icon_navigator" />
+
+    <Button
+        android:id="@+id/listbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Button" />
 
 </RelativeLayout>
