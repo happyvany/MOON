@@ -31,7 +31,7 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="59dp"
         android:contentDescription="gobutton"
         android:src="@drawable/button_suche" />
 
@@ -49,9 +49,8 @@
         android:id="@+id/spinner1"
         android:layout_width="190dp"
         android:layout_height="51dp"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/go_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="186dp"
         android:background="#FFFFFF"
         android:text="STADT"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -64,7 +63,7 @@
         android:layout_width="36dp"
         android:layout_height="34dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="194dp"
+        android:layout_marginBottom="176dp"
         android:layout_toEndOf="@+id/listbutton"
         app:srcCompat="@drawable/icon_navigator" />
 
@@ -76,5 +75,37 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:text="Button" />
+
+    <Button
+        android:id="@+id/da_cinema"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="DA CINEMA" />
+
+    <EditText
+        android:id="@+id/editStadt"
+        android:layout_width="189dp"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="242dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Stadtname"
+        android:inputType="textPersonName"
+        android:textIsSelectable="false" />
+
+    <TextView
+        android:id="@+id/textout"
+        android:layout_width="123dp"
+        android:layout_height="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp"
+        android:background="#ffffff"
+        android:text="TextView" />
 
 </RelativeLayout>

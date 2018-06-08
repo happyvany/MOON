@@ -1,5 +1,6 @@
 package com.example.hongvan.moon;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -26,6 +27,7 @@ public class Fake extends AppCompatActivity {
         //gdsaiuhij
 
 
+        //myListView.setTextColor(Color.RED);
 
 
     }
@@ -44,12 +46,6 @@ public class Fake extends AppCompatActivity {
     ArrayList<String> ff_shopping;
     ArrayList<String> ff_freizeit;
     ArrayList<String> ff_medizin;
-
-
-
-
-
-
 
 
         public void fillVec(){
@@ -104,12 +100,6 @@ public class Fake extends AppCompatActivity {
 
 
         }
-
-
-
-
-
-
 
 
 
