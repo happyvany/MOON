@@ -39,14 +39,14 @@ public class Angebote extends AppCompatActivity {
 
 
 
-        prevButton = findViewById(R.id.prvbtn);
+       /* prevButton = findViewById(R.id.prvbtn);
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openStartBildschirm();
             }
         });
-
+*/
 
 
 

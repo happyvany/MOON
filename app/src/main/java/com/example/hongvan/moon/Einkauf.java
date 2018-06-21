@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class Einkauf extends AppCompatActivity {
-    String[] shopping = {"Mueller", "H&M", "Candy"};
+    String[] shopping = {"Mueller", "H&M", "Zara"};
     ListView listView;
 
 
@@ -22,7 +22,7 @@ public class Einkauf extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_einkauf);
-        listView = (ListView)findViewById(R.id.shopping_list);
+        listView = (ListView)findViewById(R.id.hospital_list);
 
         String message = getIntent().getStringExtra("key");
         TextView messageT =(TextView)findViewById(R.id.stadtname);
@@ -43,14 +43,14 @@ public class Einkauf extends AppCompatActivity {
 
 
                 // Set the text color of TextView (ListView Item)
-                tv.setTextColor(Color.WHITE);
+                tv.setTextColor(Color.BLACK);
 
                 return view;
             }
         };
         //reference to list
 
-        ListView myListView = (ListView) findViewById(R.id.shopping_list);
+        ListView myListView = (ListView) findViewById(R.id.einkauf_list);
         myListView.setAdapter(meinAdapter);
         //gdsaiuhij
     }

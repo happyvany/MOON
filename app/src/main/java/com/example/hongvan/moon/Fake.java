@@ -1,13 +1,10 @@
 package com.example.hongvan.moon;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-
-import java.util.ArrayList;
 
 public class Fake extends AppCompatActivity {
 
@@ -22,7 +19,7 @@ public class Fake extends AppCompatActivity {
         ListAdapter meinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, shopping);
         //reference to list
 
-        ListView myListView = (ListView) findViewById(R.id.shopping_list);
+        ListView myListView = (ListView) findViewById(R.id.hospital_list);
         myListView.setAdapter(meinAdapter);
         //gdsaiuhij
 
