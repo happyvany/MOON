@@ -37,14 +37,6 @@ public class Angebote extends AppCompatActivity {
         Log.d(TAG, "onCreate:started");
 
 
-/*
-        Bundle extras = getIntent().getExtras();
-        if (extras!=null){
-            String value = extras.getString("KEY");
-            messageTextView.setText(value);
-        }
-
-*/
 
 
         prevButton = findViewById(R.id.prvbtn);
@@ -54,35 +46,8 @@ public class Angebote extends AppCompatActivity {
                 openStartBildschirm();
             }
         });
-  /*
-        public void click()
-        {
-            img_einkauf = (ImageView)findViewById(R.id.einkaufen);
-            img_einkauf.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
-                    Intent intent = new Intent("fgedfydfcgu.imagesethh.Main2Activity");
-                    startActivity(intent);
-                }
-            });
-        }
-        click();
 
-        img_freizeit = findViewById(R.id.freizeit);
-        img_freizeit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFreizeit();
-            }
-        });
 
-        img_medizin = findViewById(R.id.medizin);
-        img_medizin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMedizin();
-            }
-        });
-        */
 
 
 
@@ -92,6 +57,10 @@ public class Angebote extends AppCompatActivity {
         TextView messageT =(TextView)findViewById(R.id.testtest);
 
         messageT.setText(message);
+        Bundle bundle = new Bundle();
+
+        bundle.putString("key", message );
+
 
         //____________________________________
 
@@ -100,8 +69,14 @@ public class Angebote extends AppCompatActivity {
         mMainNav = (BottomNavigationView) findViewById(R.id.bottomn_navigation);
 
         angeboteFragment = new AngeboteFragment();
+        angeboteFragment.setArguments(bundle);
+
         favoritenFragment = new FavoritenFragment();
+        favoritenFragment.setArguments(bundle);
+
         einstellungenFragment = new EinstellungenFragment();
+        einstellungenFragment.setArguments(bundle);
+
         setFragment(angeboteFragment);
 
        /* img_einkauf = (ImageView) findViewById(R.id.einkaufen);
@@ -117,15 +92,15 @@ public class Angebote extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.nav_kat:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
+                        /*mMainNav.setItemBackgroundResource(R.color.colorPrimary);*/
                         setFragment(angeboteFragment);
                         return true;
                     case R.id.nav_fav:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimaryDark);
+                       /* mMainNav.setItemBackgroundResource(R.color.colorPrimaryDark);*/
                         setFragment(favoritenFragment);
                         return true;
                     case R.id.nav_einst:
-                        mMainNav.setItemBackgroundResource(R.color.colorTheme);
+                       /* mMainNav.setItemBackgroundResource(R.color.colorTheme);*/
                         setFragment(einstellungenFragment);
                         return true;
 

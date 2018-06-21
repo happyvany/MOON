@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/backgroundnyc">
+    android:background="@drawable/backgroundnyc"
+    >
 
     <Button
         android:id="@+id/prvbtn"
@@ -22,11 +23,17 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
 
-        app:itemIconTint="@color/nav_item_color"
-        app:itemTextColor="@color/nav_item_color"
-        app:itemBackground="@color/CityHunterTheme"
+
         app:menu="@menu/nav_items"
+        app:itemBackground="@color/CityHunterTheme"
+        app:itemIconTint="@drawable/text"
+        app:itemTextColor="@drawable/text"
         />
+        <!--app:itemBackground="@color/CityHunterTheme"
+         app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        -->
+
 
     <FrameLayout
         android:id="@+id/main_frame"

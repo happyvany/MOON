@@ -30,29 +30,20 @@ public class AngeboteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-       /* img_einkauf = (ImageView) getView().findViewById(R.id.einkaufen);*/
-        /*img_freizeit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEinkaufen();
-            }
-        });*/
+        final String stadt = (String) this.getArguments().get("key");
 
-        /*ImageView img = (ImageView) container.findViewById(R.id.einkaufen);
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Einkauf.class)) ;
-            }
-        });*/
         View rootView = inflater.inflate(R.layout.fragment_angebote2,
                 container, false);
         img_einkauf = rootView.findViewById(R.id.einkaufen);
         img_einkauf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openEinkaufen();
+                Intent intent = new Intent(getActivity(), Einkauf.class);
+
+                intent.putExtra("key",stadt);
+                // intent.putExtra("key",spinnerValue);
+                startActivity(intent);
+                //openEinkaufen();
             }
         });
 
@@ -60,7 +51,12 @@ public class AngeboteFragment extends Fragment {
         img_freizeit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFreizeit();
+                Intent intent = new Intent(getActivity(), Freizeit.class);
+
+                intent.putExtra("key",stadt);
+                // intent.putExtra("key",spinnerValue);
+                startActivity(intent);
+                //openFreizeit();
             }
         });
 
@@ -69,16 +65,22 @@ public class AngeboteFragment extends Fragment {
         img_medizin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMedizin();
+                Intent intent = new Intent(getActivity(), Medizin1.class);
+
+                intent.putExtra("key",stadt);
+                // intent.putExtra("key",spinnerValue);
+                startActivity(intent);
+                //openMedizin();
             }
         });
 
-        //return inflater.inflate(R.layout.fragment_angebote2, container, false);
+
         return rootView;
     }
 
     public void openEinkaufen(){
         Intent intent = new Intent(getActivity(), Einkauf.class);
+
         startActivity(intent);
     }
 

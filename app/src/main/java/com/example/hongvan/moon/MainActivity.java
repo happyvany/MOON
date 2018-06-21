@@ -1,38 +1,26 @@
 package com.example.hongvan.moon;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.Manifest;
-import android.app.Activity;
 import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-import com.example.hongvan.moon.R;
 
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -49,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     RequestService mService = null;
     boolean mBound = false;
 
-    //--------------------------    service Verbindung einrichten
+    //--------------------------service Verbindung einrichten
     private ServiceConnection mConnection = new ServiceConnection() {
 
         @Override
@@ -89,22 +77,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
     //--------------------------
 
-
-
-
-
-
-
-
     private ImageView nxtbutton;
-Button meinbutton;
 
 //String stadtName;
-
     TextView t;
-   String spinnerValue;
+    String spinnerValue;
 
-
+/*----------------------------------------------------MAIN wird ausgeführt-----------------------------------------------------------------------*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,8 +93,6 @@ Button meinbutton;
         Typeface myCustomFont=Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Bold.ttf");
         t.setTypeface(myCustomFont);
         */
-
-
 
         // Permission grant/gewähren
         String[] permissions =
@@ -127,13 +104,15 @@ Button meinbutton;
         Intent myIntent = new Intent(this, RequestService.class);
         // startService(myIntent); oder alternativ:
         bindService(myIntent, mConnection, Context.BIND_AUTO_CREATE);
+//        System.out.println("hello");
 
-        Button b;
-        b = (Button) findViewById(R.id.da_cinema);
-        b.setOnClickListener(new View.OnClickListener() {
+
+/*        b.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View arg0) {
+
+            public void onClick(View view) {
+                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
                 String url;
                 String fPath;
                 String fileName;
@@ -141,18 +120,19 @@ Button meinbutton;
                 url = "https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt";
                 fPath = "NZSE";
                 fileName = "cinema.txt";
+                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
 
                 if (mService != null)
                     mService.runURLDownload("cinema", url, fPath, fileName);
                 //else
                 //    ... Hinweis
             }
-        });
+        });*/
 
 
 
 
-        Spinner spinner =findViewById(R.id.spinner1);
+       /* Spinner spinner =findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Stadt, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -173,16 +153,40 @@ Button meinbutton;
 
         //spinnerValue =Spinner spinner.getSelectedItem().toString();
         System.out.println(spinnerValue);
+        */
 
-         meinbutton=(Button)findViewById(R.id.listbutton);
-        meinbutton.setOnClickListener(new View.OnClickListener(){
+
+
+        stadtName=(EditText) findViewById(R.id.editStadt);
+
+        daCinema=(Button) findViewById(R.id.cinema);
+
+        text=(TextView) findViewById(R.id.textout);
+        stadt=stadtName.getText().toString();
+
+
+        daCinema.setOnClickListener(new View.OnClickListener() {
             @Override
-                    public void onClick(View v){
-                openFake();
+            public void onClick(View v) {
+                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
+                String url;
+                String fPath;
+                String fileName;
+                // Testbeispiel
+                url = "https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=hospital+in+darmstadt";
+                fPath = "NZSE";
+                fileName = "hospital.txt";
+                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
+
+                if (mService != null)
+                    mService.runURLDownload("supermarkt", url, fPath, fileName);
+                //else
+                //    ... Hinweis
+                stadt=stadtName.getText().toString();
+                text.setText(stadt);
+
             }
         });
-
-
 
 
         nxtbutton = findViewById(R.id.go_button);
@@ -190,39 +194,17 @@ Button meinbutton;
             @Override
             public void onClick(View v) {
                 //openAngebote();
+                stadt=stadtName.getText().toString();
                 Intent intent = new Intent(MainActivity.this, com.example.hongvan.moon.Angebote.class);
 
-                intent.putExtra("key",spinnerValue);
+                intent.putExtra("key",stadt);
                 // intent.putExtra("key",spinnerValue);
                 startActivity(intent);
             }
         });
-
-
-
-        stadtName=(EditText) findViewById(R.id.editStadt);
-
-        daCinema=(Button) findViewById(R.id.da_cinema);
-
-        text=(TextView) findViewById(R.id.textout);
-
-
-daCinema.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        stadt=stadtName.getText().toString();
-
-    }
-});
-
-text.setText(stadt);
-
-
-
     }
 
-
-
+    /*-----------------------------------------------ENDE-MAIN--------------------------------------------------------------------------------------*/
 
 
     @Override

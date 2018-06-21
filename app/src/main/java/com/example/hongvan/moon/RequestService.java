@@ -205,8 +205,9 @@ public class RequestService extends Service {
             try {
                 FileOutputStream fos = null;
 
-                File output = new File(Environment.getExternalStorageDirectory(),
-                        filePath + "/" + fileName);
+                //File output = new File(Environment.getExternalStorageDirectory(),
+                File output = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                filePath + "/" + fileName);
                 if (output.exists()) output.delete();
 
                 InputStream inputStream = null;

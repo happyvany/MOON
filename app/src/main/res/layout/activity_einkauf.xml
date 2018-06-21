@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundnyc"
+    android:background="@drawable/bg_dark"
     tools:context=".Einkauf">
 
 
@@ -12,12 +12,8 @@
         android:id="@+id/Einkauf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_above="@+id/shopping_list"
+        android:layout_centerHorizontal="true"
         android:text="Einkauf"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="@color/colorWhite"
@@ -37,4 +33,14 @@
         android:layout_alignParentStart="true"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp" />
+
+    <TextView
+        android:id="@+id/stadtname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/Einkauf"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
 </RelativeLayout>
