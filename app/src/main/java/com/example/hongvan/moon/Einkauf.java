@@ -31,7 +31,7 @@ public class Einkauf extends AppCompatActivity {
 
         //ADAPTER, konvertiert array in listitems
 
-        ListAdapter meinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, shopping){
+    /*    ListAdapter meinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, shopping){
             @NonNull
             @Override
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -47,12 +47,17 @@ public class Einkauf extends AppCompatActivity {
 
                 return view;
             }
-        };
+        };*/
         //reference to list
 
         ListView myListView = (ListView) findViewById(R.id.einkauf_list);
-        myListView.setAdapter(meinAdapter);
-        //gdsaiuhij
+
+
+        JSONparser supermarktjson = new JSONparser();
+        supermarktjson.getHospital_name();
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, supermarktjson.getSupermarkt_name());
+        myListView.setAdapter(arrayAdapter);
     }
 
 

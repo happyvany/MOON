@@ -28,11 +28,11 @@
 
     <ListView
         android:id="@+id/einkauf_list"
-        android:layout_width="281dp"
-        android:layout_height="423dp"
+        android:layout_width="332dp"
+        android:layout_height="485dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="13dp"
         android:background="#FFFFFF"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp" />
@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Einkauf"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="24sp" />

@@ -3,7 +3,9 @@ package com.example.hongvan.moon;
 
 import android.content.Intent;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,10 +38,12 @@ public class AngeboteFragment extends Fragment {
                 container, false);
         img_einkauf = rootView.findViewById(R.id.einkaufen);
         img_einkauf.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Einkauf.class);
-
+                JSONparser parser = new JSONparser();
+                parser.load_supermarkt( this);
                 intent.putExtra("key",stadt);
                 // intent.putExtra("key",spinnerValue);
                 startActivity(intent);
@@ -49,10 +53,12 @@ public class AngeboteFragment extends Fragment {
 
         img_freizeit =  rootView.findViewById(R.id.freizeit);
         img_freizeit.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Freizeit.class);
-
+                JSONparser parser = new JSONparser();
+                parser.load_cinema( this);
                 intent.putExtra("key",stadt);
                 // intent.putExtra("key",spinnerValue);
                 startActivity(intent);
@@ -63,9 +69,12 @@ public class AngeboteFragment extends Fragment {
 
         img_medizin =  rootView.findViewById(R.id.medizin);
         img_medizin.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Medizin1.class);
+                JSONparser parser = new JSONparser();
+                parser.load_hospital( this);
 
                 intent.putExtra("key",stadt);
                 // intent.putExtra("key",spinnerValue);

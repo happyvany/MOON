@@ -3,6 +3,8 @@ package com.example.hongvan.moon;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +27,8 @@ import android.support.v4.app.ActivityCompat;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText stadtName;
-    Button daCinema;
     String stadt;
-    TextView text;
+
 
     //_________________________START VANYS NOMINATIM EINBINDUNG_________________________
     //__________________________________________________________________________________
@@ -104,89 +105,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent myIntent = new Intent(this, RequestService.class);
         // startService(myIntent); oder alternativ:
         bindService(myIntent, mConnection, Context.BIND_AUTO_CREATE);
-//        System.out.println("hello");
-
-
-/*        b.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-
-            public void onClick(View view) {
-                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
-                String url;
-                String fPath;
-                String fileName;
-                // Testbeispiel
-                url = "https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt";
-                fPath = "NZSE";
-                fileName = "cinema.txt";
-                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
-
-                if (mService != null)
-                    mService.runURLDownload("cinema", url, fPath, fileName);
-                //else
-                //    ... Hinweis
-            }
-        });*/
-
-
-
-
-       /* Spinner spinner =findViewById(R.id.spinner1);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Stadt, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                              @Override
-                                              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                                  String item = parent.getItemAtPosition(position).toString();
-                                                  spinnerValue = item;
-
-                                              }
-
-                                              @Override
-                                              public void onNothingSelected(AdapterView<?> parent) {
-
-                                              }
-                                          });
-
-
-        //spinnerValue =Spinner spinner.getSelectedItem().toString();
-        System.out.println(spinnerValue);
-        */
-
-
 
         stadtName=(EditText) findViewById(R.id.editStadt);
 
-        daCinema=(Button) findViewById(R.id.cinema);
 
-        text=(TextView) findViewById(R.id.textout);
         stadt=stadtName.getText().toString();
 
-
-        daCinema.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
-                String url;
-                String fPath;
-                String fileName;
-                // Testbeispiel
-                url = "https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=hospital+in+darmstadt";
-                fPath = "NZSE";
-                fileName = "hospital.txt";
-                System.out.println("hello https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+darmstadt");
-
-                if (mService != null)
-                    mService.runURLDownload("supermarkt", url, fPath, fileName);
-                //else
-                //    ... Hinweis
-                stadt=stadtName.getText().toString();
-                text.setText(stadt);
-
-            }
-        });
 
 
         nxtbutton = findViewById(R.id.go_button);
@@ -195,6 +119,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View v) {
                 //openAngebote();
                 stadt=stadtName.getText().toString();
+
+                String url, url2, url3;
+                String fPath;
+                String fileName, filename2, filename3;
+
+                url = "https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=supermarkt+in+"+stadt;
+                url2 = "https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=cinema+in+"+stadt;
+                url3 = "https://nominatim.openstreetmap.org/search?bounded=1&format=json&polygon=0&addressdetails=1&q=hospital+in+"+stadt;
+                fPath = "NZSE";
+                fileName = "supermarkt.txt";
+                filename2 = "cinema.txt";
+                filename3 = "hospital.txt";
+
+
+                if (mService != null) {
+                    mService.runURLDownload("supermarkt", url, fPath, fileName);
+                    mService.runURLDownload("cinema", url2, fPath, filename2);
+                    mService.runURLDownload("hospital", url3, fPath, filename3);
+                }
+
                 Intent intent = new Intent(MainActivity.this, com.example.hongvan.moon.Angebote.class);
 
                 intent.putExtra("key",stadt);

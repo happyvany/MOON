@@ -30,7 +30,7 @@ public class Freizeit extends AppCompatActivity {
 
         //ADAPTER, konvertiert array in listitems
 
-        ListAdapter meinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, freizeit){
+      /*  ListAdapter meinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, freizeit){
             @NonNull
             @Override
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -46,17 +46,17 @@ public class Freizeit extends AppCompatActivity {
 
                 return view;
             }
-        };
+        };*/
         //reference to list
 
         ListView myListView = (ListView) findViewById(R.id.freizeit_list);
-        myListView.setAdapter(meinAdapter);
 
 
+        JSONparser freizeitjson = new JSONparser();
+        freizeitjson.getHospital_name();
 
-
-
-
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, freizeitjson.getCinema_name());
+        myListView.setAdapter(arrayAdapter);
 
 
 
