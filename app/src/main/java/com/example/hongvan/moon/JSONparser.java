@@ -20,6 +20,7 @@ public class JSONparser {
     private static ArrayList<String> hospital_name;
     private static ArrayList<String> cinema_name;
     private static ArrayList<String> supermarkt_name;
+    private static ArrayList<String> favoritenliste = new ArrayList<>();
 
     public static ArrayList<String> getHospital_name() {
         return hospital_name;
@@ -31,6 +32,15 @@ public class JSONparser {
 
     public static ArrayList<String> getSupermarkt_name() {
         return supermarkt_name;
+    }
+
+    public static void setFavoritenliste(ArrayList<String> favoritenliste) {
+        JSONparser.favoritenliste = favoritenliste;
+    }
+
+    public static ArrayList<String> getFavoritenliste() {
+
+        return favoritenliste;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

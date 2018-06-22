@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 /**
@@ -23,7 +25,16 @@ public class FavoritenFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favoriten2, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_favoriten3,
+                container, false);
+        ListView myListView = rootView.findViewById(R.id.favoritenliste);
+       JSONparser favoritenliste = new JSONparser();
+       favoritenliste.getFavoritenliste();
+
+        ArrayAdapter<String> arrayAdapter;
+        arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, favoritenliste.getFavoritenliste());
+        myListView.setAdapter(arrayAdapter);
+        return rootView;
     }
 
 }

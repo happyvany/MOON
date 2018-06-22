@@ -7,10 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Einkauf extends AppCompatActivity {
     String[] shopping = {"Mueller", "H&M", "Zara"};
@@ -50,14 +54,33 @@ public class Einkauf extends AppCompatActivity {
         };*/
         //reference to list
 
-        ListView myListView = (ListView) findViewById(R.id.einkauf_list);
+        final ListView myListView = (ListView) findViewById(R.id.einkauf_list);
 
 
-        JSONparser supermarktjson = new JSONparser();
+        final JSONparser supermarktjson = new JSONparser();
         supermarktjson.getHospital_name();
+        final ArrayList<String> favoritenListe = new ArrayList<>();
+
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, supermarktjson.getSupermarkt_name());
         myListView.setAdapter(arrayAdapter);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int itemPosition     = position;
+
+                // ListView Clicked item value
+                String  itemValue    = (String) myListView.getItemAtPosition(position);
+                //favoritenListe.add(itemValue);
+                supermarktjson.getFavoritenliste().add(itemValue);
+
+                // Show Alert
+                Toast.makeText(getApplicationContext(), itemValue+" n Favoriten gespeichert!" , Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
+        //supermarktjson.setFavoritenliste(favoritenListe);
     }
 
 

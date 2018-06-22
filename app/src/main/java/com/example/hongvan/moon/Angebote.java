@@ -74,8 +74,8 @@ public class Angebote extends AppCompatActivity {
         favoritenFragment = new FavoritenFragment();
         favoritenFragment.setArguments(bundle);
 
-        einstellungenFragment = new EinstellungenFragment();
-        einstellungenFragment.setArguments(bundle);
+      /*  einstellungenFragment = new EinstellungenFragment();
+        einstellungenFragment.setArguments(bundle);*/
 
         setFragment(angeboteFragment);
 
@@ -101,7 +101,8 @@ public class Angebote extends AppCompatActivity {
                         return true;
                     case R.id.nav_einst:
                        /* mMainNav.setItemBackgroundResource(R.color.colorTheme);*/
-                        setFragment(einstellungenFragment);
+                       openStartBildschirm();
+                        //setFragment(einstellungenFragment);
                         return true;
 
                     default:

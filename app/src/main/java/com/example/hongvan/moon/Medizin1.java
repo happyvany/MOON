@@ -9,10 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Medizin1 extends AppCompatActivity {
 
@@ -49,13 +53,29 @@ public class Medizin1 extends AppCompatActivity {
         };*/
         //reference to list
 
-        ListView myListView = (ListView) findViewById(R.id.hospital_list);
+        final ListView myListView = (ListView) findViewById(R.id.hospital_list);
 
 
-        JSONparser hospitaljson = new JSONparser();
+        final JSONparser hospitaljson = new JSONparser();
         hospitaljson.getHospital_name();
+        final ArrayList<String> favoritenListe = new ArrayList<>();
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, hospitaljson.getHospital_name());
         myListView.setAdapter(arrayAdapter);
+        myListView.setAdapter(arrayAdapter);
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int itemPosition     = position;
+
+                // ListView Clicked item value
+                String  itemValue    = (String) myListView.getItemAtPosition(position);
+                hospitaljson.getFavoritenliste().add(itemValue);
+
+                // Show Alert
+                Toast.makeText(getApplicationContext(), itemValue+" in Favoriten gespeichert!" , Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
     }
 }
